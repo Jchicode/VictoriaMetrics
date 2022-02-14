@@ -31,7 +31,7 @@ sort: 17
 
 ### Public Announcement 
 
-- Publish message in Slack  at https://victoriametrics.slack.com
+- Publish message in Slack  at https://slack.victoriametrics.com/
 - Post at Twitter at https://twitter.com/MetricsVictoria
 - Post in Reddit at https://www.reddit.com/r/VictoriaMetrics/
 - Post in Linkedin at https://www.linkedin.com/company/victoriametrics/
