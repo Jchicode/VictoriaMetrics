@@ -523,7 +523,7 @@ kubectl --namespace default port-forward $POD_NAME 3000
 
 ## 5. Check the result you obtained in your browser
 
-To check that [VictoriaMetrics](https://victoriametrics.com) collects metrics from k8s cluster open in browser [http://127.0.0.1:3000/dashboards](http://127.0.0.1:3000/dashboards) and choose the `Kubernetes Cluster Monitoring (via Prometheus)` dashboard. Use `admin` for login and `password` that you previously got from kubectl. 
+To check that [VictoriaMetrics](https://victoriametrics.com) collects metrics from k8s cluster open in browser http://127.0.0.1:3000/dashboards and choose the `Kubernetes Cluster Monitoring (via Prometheus)` dashboard. Use `admin` for login and `password` that you previously got from kubectl. 
 
 <p align="center">
   <img src="guide-vmcluster-dashes-agent.png" width="800" alt="grafana dashboards">

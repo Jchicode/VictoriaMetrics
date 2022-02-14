@@ -323,12 +323,12 @@ kubectl --namespace default port-forward $POD_NAME 3000
 
 </div>
 
-Now Grafana should be accessible on the [http://127.0.0.1:3000](http://127.0.0.1:3000) address.
+Now Grafana should be accessible on the http://127.0.0.1:3000 address.
 
 
 ## 4. Check the obtained result in your browser
 
-To check that VictoriaMetrics has collects metrics from the k8s cluster open in browser [http://127.0.0.1:3000/dashboards](http://127.0.0.1:3000/dashboards) and choose `Kubernetes Cluster Monitoring (via Prometheus)` dashboard. Use `admin` for login and `password` that you previously obtained from kubectl. 
+To check that VictoriaMetrics has collects metrics from the k8s cluster open in browser http://127.0.0.1:3000/dashboards and choose `Kubernetes Cluster Monitoring (via Prometheus)` dashboard. Use `admin` for login and `password` that you previously obtained from kubectl. 
 
 <p align="center">
   <img src="guide-vmsingle-grafana-dashboards.png" width="800" alt="">
