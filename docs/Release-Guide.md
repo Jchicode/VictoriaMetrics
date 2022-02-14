@@ -8,10 +8,10 @@ sort: 17
 
 0. Document all the changes for new release in [CHANGELOG.md](https://github.com/VictoriaMetrics/VictoriaMetrics/blob/master/docs/CHANGELOG.md).
 1. Create the following release tags:
-   * `git tag v1.xx.y` in `master` branch
-   * `git tag v1.xx.y-cluster` in `cluster` branch
-   * `git tag v1.xx.y-enterprise` in `enterprise` branch
-   * `git tag v1.xx.y-enterprise-cluster` in `enterprise-cluster` branch
+   * `git tag -s v1.xx.y` in `master` branch
+   * `git tag -s v1.xx.y-cluster` in `cluster` branch
+   * `git tag -s v1.xx.y-enterprise` in `enterprise` branch
+   * `git tag -s v1.xx.y-enterprise-cluster` in `enterprise-cluster` branch
 2. Run `TAG=v1.xx.y make publish-release`. It will create `*.tar.gz` release archives with the corresponding `_checksums.txt` files inside `bin` directory and publish Docker images for the given `TAG`, `TAG-cluster`, `TAG-enterprise` and `TAG-enterprise-cluster`.
 5. Push release tag to https://github.com/VictoriaMetrics/VictoriaMetrics : `git push origin v1.xx.y`.
 6. Go to https://github.com/VictoriaMetrics/VictoriaMetrics/releases , create new release from the pushed tag on step 5 and upload `*.tar.gz` archive with the corresponding `_checksums.txt` from step 2.
@@ -22,7 +22,7 @@ sort: 17
 - snapcraft binary, can be installed with commands:
    for MacOS `brew install snapcraft` and [install mutipass](https://discourse.ubuntu.com/t/installing-multipass-on-macos/8329),
    for Ubuntu - `sudo snap install snapcraft --classic`
-- login with `snapcraft login`
+- exported snapcraft login to `~/.snap/login.json` with `snapcraft export-login login.json && mkdir -p ~/.snap && mv login.json ~/.snap/`
 - already created release at github (it operates `git describe` version, so git tag must be annotated).
 
 0. checkout to the latest git tag for single-node version.

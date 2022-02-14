@@ -52,7 +52,7 @@ var (
 	configAuthKey          = flag.String("configAuthKey", "", "Authorization key for accessing /config page. It must be passed via authKey query arg")
 	dryRun                 = flag.Bool("dryRun", false, "Whether to check only config files without running vmagent. The following files are checked: "+
 		"-promscrape.config, -remoteWrite.relabelConfig, -remoteWrite.urlRelabelConfig . "+
-		"Unknown config entries are allowed in -promscrape.config by default. This can be changed with -promscrape.config.strictParse")
+		"Unknown config entries aren't allowed in -promscrape.config by default. This can be changed by passing -promscrape.config.strictParse=false command-line flag")
 )
 
 var (
@@ -261,6 +261,14 @@ func requestHandler(w http.ResponseWriter, r *http.Request) bool {
 		promscrapeTargetsRequests.Inc()
 		promscrape.WriteHumanReadableTargetsStatus(w, r)
 		return true
+	case "/target_response":
+		promscrapeTargetResponseRequests.Inc()
+		if err := promscrape.WriteTargetResponse(w, r); err != nil {
+			promscrapeTargetResponseErrors.Inc()
+			httpserver.Errorf(w, r, "%s", err)
+			return true
+		}
+		return true
 	case "/config":
 		if *configAuthKey != "" && r.FormValue("authKey") != *configAuthKey {
 			err := &httpserver.ErrorWithStatusCode{
@@ -441,6 +449,9 @@ var (
 
 	promscrapeTargetsRequests      = metrics.NewCounter(`vmagent_http_requests_total{path="/targets"}`)
 	promscrapeAPIV1TargetsRequests = metrics.NewCounter(`vmagent_http_requests_total{path="/api/v1/targets"}`)
+
+	promscrapeTargetResponseRequests = metrics.NewCounter(`vmagent_http_requests_total{path="/target_response"}`)
+	promscrapeTargetResponseErrors   = metrics.NewCounter(`vmagent_http_request_errors_total{path="/target_response"}`)
 
 	promscrapeConfigRequests = metrics.NewCounter(`vmagent_http_requests_total{path="/config"}`)
 
