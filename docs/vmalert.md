@@ -875,7 +875,6 @@ It is recommended using
 
 ### ARM build
 
-ARM build may run on Raspberry Pi or on [energy-efficient ARM servers](https://blog.cloudflare.com/arm-takes-wing/).
 
 ### Development ARM build
 
