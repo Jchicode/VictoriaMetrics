@@ -45,7 +45,6 @@ See also [case studies](https://docs.victoriametrics.com/CaseStudies.html).
 * [Multi-tenancy monitoring system for Kubernetes cluster using VictoriaMetrics and operators](https://blog.kintone.io/entry/2021/03/31/175256)
 * [Monitoring as Code на базе VictoriaMetrics и Grafana](https://habr.com/ru/post/568090/)
 * [Push Prometheus metrics to VictoriaMetrics or other exporters](https://pythonawesome.com/push-prometheus-metrics-to-victoriametrics-or-other-exporters/)
-* [Install and configure VictoriaMetrics on Debian](https://www.vultr.com/docs/install-and-configure-victoriametrics-on-debian)
 * [Superset BI with Victoria Metrics](https://cer6erus.medium.com/superset-bi-with-victoria-metrics-a109d3e91bc6)
 
 ## Our articles
