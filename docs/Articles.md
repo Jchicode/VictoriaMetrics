@@ -64,7 +64,7 @@ See also [case studies](https://docs.victoriametrics.com/CaseStudies.html).
 * [Insert benchmarks with inch: InfluxDB vs VictoriaMetrics](https://valyala.medium.com/insert-benchmarks-with-inch-influxdb-vs-victoriametrics-e31a41ae2893)
 * [Measuring vertical scalability for time series databases in Google Cloud](https://valyala.medium.com/measuring-vertical-scalability-for-time-series-databases-in-google-cloud-92550d78d8ae)
 * [Billy: how VictoriaMetrics deals with more than 500 billion rows](https://valyala.medium.com/billy-how-victoriametrics-deals-with-more-than-500-billion-rows-e82ff8f725da)
-* [First look at performance comparison between InfluxDB IOx and VictoriaMetrics](https://victoriametrics.medium.com/first-look-at-perfomance-comparassion-between-influxdb-iox-and-victoriametrics-e590f847935b)
+* First look at performance comparison between InfluxDB IOx and VictoriaMetrics
 * [Prometheus vs VictoriaMetrics benchmark on node-exporter metrics](https://valyala.medium.com/prometheus-vs-victoriametrics-benchmark-on-node-exporter-metrics-4ca29c75590f)
 * [Promscale vs VictoriaMetrics: resource usage on production workload](https://valyala.medium.com/promscale-vs-victoriametrics-resource-usage-on-production-workload-91c8e3786c03)
 
