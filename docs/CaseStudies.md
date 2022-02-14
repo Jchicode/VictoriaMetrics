@@ -358,7 +358,7 @@ Numbers:
 
 ## Idealo.de
 
-[idealo.de](https://www.idealo.de/) is the leading price comparison website in Germany. We use Prometheus for metrics on our container platform.
+idealo.de is the leading price comparison website in Germany. We use Prometheus for metrics on our container platform.
 When we introduced Prometheus at idealo we started with m3db as our longterm storage. In our setup, m3db was quite unstable and consumed a lot of resources.
 
 VictoriaMetrics in production is very stable for us and uses only a fraction of the resources even though we also increased our retention period from 1 month to 13 months.
@@ -421,7 +421,7 @@ See [the full article](https://engineering.razorpay.com/scaling-to-trillions-of-
 
 [Sensedia](https://www.sensedia.com) is a leading integration solutions provider with more than 120 enterprise clients across a range of sectors. Its world-class portfolio includes: an API Management Platform, Adaptive Governance, Events Hub, Service Mesh, Cloud Connectors and Strategic Professional Services' teams.
 
-> Our initial requirements for monitoring solution: the metrics must be stored for 15 days, the solution must be scalable and must offer high availability of the metrics. It must being integrated into Grafana and allowing the use of PromQL when creating/editing dashboards in Grafana to obtain metrics from the Prometheus datasource. The solution also needs to receive data from Prometheus using HTTPS and needs to request a login and password to write/read the metrics. Details are available [in this article](https://nordicapis.com/api-monitoring-with-prometheus-grafana-alertmanager-and-victoriametrics/).
+> Our initial requirements for monitoring solution: the metrics must be stored for 15 days, the solution must be scalable and must offer high availability of the metrics. It must being integrated into Grafana and allowing the use of PromQL when creating/editing dashboards in Grafana to obtain metrics from the Prometheus datasource. The solution also needs to receive data from Prometheus using HTTPS and needs to request a login and password to write/read the metrics. Details are available 
 
 > We evaluated VictoriaMetrics, InfluxDB OpenSource and Enterprise, ElasticSearch, Thanos, Cortex, TimescaleDB/PostgreSQL and M3DB. We selected VictoriaMetrics because it has [good community support](https://slack.victoriametrics.com/), [good documentation](https://docs.victoriametrics.com/) and it just works.
 
@@ -460,7 +460,6 @@ See [the full article](https://smarketshq.com/monitoring-kubernetes-clusters-41a
 
 ## Synthesio
 
-[Synthesio](https://www.synthesio.com/) is the leading social intelligence tool for social media monitoring and analytics.
 
 > We fully migrated from [Metrictank](https://grafana.com/oss/metrictank/)  to VictoriaMetrics
 
@@ -539,9 +538,6 @@ Please see [Monitoring K8S with VictoriaMetrics](https://docs.google.com/present
 [video](https://youtu.be/ZJQYW-cFOms) and [Infrastructure monitoring with Prometheus at Zerodha](https://zerodha.tech/blog/infra-monitoring-at-zerodha/) blog post for more details.
 
 
-## zhihu
-
-[zhihu](https://www.zhihu.com) is the largest Chinese question-and-answer website. We use VictoriaMetrics to store and use Graphite metrics. We shared the [promate](https://github.com/zhihu/promate) solution in our [单机 20 亿指标，知乎 Graphite 极致优化！](https://qcon.infoq.cn/2020/shenzhen/presentation/2881)([slides](https://static001.geekbang.org/con/76/pdf/828698018/file/%E5%8D%95%E6%9C%BA%2020%20%E4%BA%BF%E6%8C%87%E6%A0%87%EF%BC%8C%E7%9F%A5%E4%B9%8E%20Graphite%20%E6%9E%81%E8%87%B4%E4%BC%98%E5%8C%96%EF%BC%81-%E7%86%8A%E8%B1%B9.pdf)) talk at [QCon 2020](https://qcon.infoq.cn/2020/shenzhen/).
 
 Numbers:
 
