@@ -14,19 +14,19 @@ If you are unfamiliar with PromQL, then it is suggested reading [this tutorial f
 
 The following functionality is implemented differently in MetricsQL compared to PromQL. This improves user experience:
 * MetricsQL takes into account the previous point before the window in square brackets for range functions such as [rate](#rate) and [increase](#increase). This allows returning the exact results users expect for `increase(metric[$__interval])` queries instead of incomplete results Prometheus returns for such queries.
-* MetricsQL doesn't extrapolate range function results. This addresses [this issue from Prometheus](https://github.com/prometheus/prometheus/issues/3746). See technical details about VictoriaMetrics and Prometheus calculations for [rate](#rate) and [increase](#increase) [in this issue](https://github.com/VictoriaMetrics/VictoriaMetrics/issues/1215#issuecomment-850305711).
-* MetricsQL returns the expected non-empty responses for [rate](#rate) with `step` values smaller than scrape interval. This addresses [this issue from Grafana](https://github.com/grafana/grafana/issues/11451). See also [this blog post](https://www.percona.com/blog/2020/02/28/better-prometheus-rate-function-with-victoriametrics/).
+* MetricsQL doesn't extrapolate range function results. This addresses [this issue from Prometheus /3746). See technical details about VictoriaMetrics and Prometheus calculations for [rate](#rate) and [increase](#increase) [in this issue 1215#issuecomment-850305711).
+* MetricsQL returns the expected non-empty responses for [rate](#rate) with `step` values smaller than scrape interval. This addresses [this issue from Grafana /11451). See also [this blog post](https://www.percona.com/blog/2020/02/28/better-prometheus-rate-function-with-victoriametrics/).
 * MetricsQL treats `scalar` type the same as `instant vector` without labels, since subtle differences between these types usually confuse users. See [the corresponding Prometheus docs](https://prometheus.io/docs/prometheus/latest/querying/basics/#expression-language-data-types) for details.
 * MetricsQL removes all the `NaN` values from the output, so some queries like `(-1)^0.5` return empty results in VictoriaMetrics, while returning a series of `NaN` values in Prometheus. Note that Grafana doesn't draw any lines or dots for `NaN` values, so the end result looks the same for both VictoriaMetrics and Prometheus.
-* MetricsQL keeps metric names after applying functions, which don't change the meaning of the original time series. For example, [min_over_time(foo)](#min_over_time) or [round(foo)](#round) leaves `foo` metric name in the result. See [this issue](https://github.com/VictoriaMetrics/VictoriaMetrics/issues/674) for details.
+* MetricsQL keeps metric names after applying functions, which don't change the meaning of the original time series. For example, [min_over_time(foo)](#min_over_time) or [round(foo)](#round) leaves `foo` metric name in the result. See [this issue 674) for details.
 
 Read more about the diffferences between PromQL and MetricsQL in [this article](https://medium.com/@romanhavronenko/victoriametrics-promql-compliance-d4318203f51e).
 
-Other PromQL functionality should work the same in MetricsQL. [File an issue](https://github.com/VictoriaMetrics/VictoriaMetrics/issues) if you notice discrepancies between PromQL and MetricsQL results other than mentioned above.
+Other PromQL functionality should work the same in MetricsQL. [File an issue ) if you notice discrepancies between PromQL and MetricsQL results other than mentioned above.
 
 ## MetricsQL features
 
-MetricsQL implements [PromQL](https://medium.com/@valyala/promql-tutorial-for-beginners-9ab455142085) and provides additional functionality mentioned below, which is aimed towards solving practical cases. Feel free [filing a feature request](https://github.com/VictoriaMetrics/VictoriaMetrics/issues) if you think MetricsQL misses certain useful functionality.
+MetricsQL implements [PromQL](https://medium.com/@valyala/promql-tutorial-for-beginners-9ab455142085) and provides additional functionality mentioned below, which is aimed towards solving practical cases. Feel free [filing a feature request ) if you think MetricsQL misses certain useful functionality.
 
 This functionality can be evaluated at [an editable Grafana dashboard](https://play-grafana.victoriametrics.com/d/4ome8yJmz/node-exporter-on-victoriametrics-demo) or at your own [VictoriaMetrics instance](https://docs.victoriametrics.com/#how-to-start-victoriametrics).
 
@@ -43,7 +43,7 @@ This functionality can be evaluated at [an editable Grafana dashboard](https://p
 - Trailing commas on all the lists are allowed - label filters, function args and with expressions. For instance, the following queries are valid: `m{foo="bar",}`, `f(a, b,)`, `WITH (x=y,) x`. This simplifies maintenance of multi-line queries.
 - Metric names and metric labels may contain escaped chars. For instance, `foo\-bar{baz\=aa="b"}` is valid expression. It returns time series with name `foo-bar` containing label `baz=aa` with value `b`. Additionally, `\xXX` escape sequence is supported, where `XX` is hexadecimal representation of escaped char.
 - Aggregate functions support optional `limit N` suffix in order to limit the number of output series. For example, `sum(x) by (y) limit 3` limits the number of output time series after the aggregation to 3. All the other time series are dropped.
-- [histogram_quantile](#histogram_quantile) accepts optional third arg - `boundsLabel`. In this case it returns `lower` and `upper` bounds for the estimated percentile. See [this issue for details](https://github.com/prometheus/prometheus/issues/5706).
+- [histogram_quantile](#histogram_quantile) accepts optional third arg - `boundsLabel`. In this case it returns `lower` and `upper` bounds for the estimated percentile. See [this issue for details /5706).
 - `default` binary operator. `q1 default q2` fills gaps in `q1` with the corresponding values from `q2`.
 - `if` binary operator. `q1 if q2` removes values from `q1` for missing values from `q2`.
 - `ifnot` binary operator. `q1 ifnot q2` removes values from `q1` for existing values from `q2`.
@@ -477,7 +477,7 @@ See also [implicit query conversions](#implicit-query-conversions).
 
 #### histogram_quantile
 
-`histogram_quantile(phi, buckets)` calculates `phi`-quantile over the given [histogram buckets](https://valyala.medium.com/improving-histogram-usability-for-prometheus-and-grafana-bc7e5df0e350). `phi` must be in the range `[0...1]`. For example, `histogram_quantile(0.5, sum(rate(http_request_duration_seconds_bucket[5m]) by (le))` would return median request duration for all the requests during the last 5 minutes. It accepts optional third arg - `boundsLabel`. In this case it returns `lower` and `upper` bounds for the estimated percentile. See [this issue for details](https://github.com/prometheus/prometheus/issues/5706). This function is supported by PromQL (except of the `boundLabel` arg). See also [histogram_quantiles](#histogram_quantiles) and [histogram_share](#histogram_share).
+`histogram_quantile(phi, buckets)` calculates `phi`-quantile over the given [histogram buckets](https://valyala.medium.com/improving-histogram-usability-for-prometheus-and-grafana-bc7e5df0e350). `phi` must be in the range `[0...1]`. For example, `histogram_quantile(0.5, sum(rate(http_request_duration_seconds_bucket[5m]) by (le))` would return median request duration for all the requests during the last 5 minutes. It accepts optional third arg - `boundsLabel`. In this case it returns `lower` and `upper` bounds for the estimated percentile. See [this issue for details /5706). This function is supported by PromQL (except of the `boundLabel` arg). See also [histogram_quantiles](#histogram_quantiles) and [histogram_share](#histogram_share).
 
 #### histogram_quantiles
 
