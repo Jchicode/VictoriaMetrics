@@ -644,7 +644,6 @@ to your needs or when testing bugfixes.
 
 ### ARM build
 
-ARM build may run on Raspberry Pi or on [energy-efficient ARM servers](https://blog.cloudflare.com/arm-takes-wing/).
 
 ### Development ARM build
 
@@ -1547,7 +1546,6 @@ Contact us with any questions regarding VictoriaMetrics at [info@victoriametrics
 Feel free asking any questions regarding VictoriaMetrics:
 
 * [slack](https://slack.victoriametrics.com/)
-* [linkedin](https://www.linkedin.com/company/victoriametrics/)
 * [reddit](https://www.reddit.com/r/VictoriaMetrics/)
 * [telegram-en](https://t.me/VictoriaMetrics_en)
 * [telegram-ru](https://t.me/VictoriaMetrics_ru1)
