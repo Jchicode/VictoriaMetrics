@@ -46,5 +46,5 @@ Configuration tuning is possible with editing extra_flags:
 echo 'FLAGS="-selfScrapeInterval=10s -search.logSlowQueryDuration=20s"' > /var/snap/victoriametrics/current/extra_flags
 snap restart victoriametrics
 ```
-
+vmui/packages/vmui/README.md
 Data folder located at `/var/snap/victoriametrics/current/var/lib/victoriametrics/`
