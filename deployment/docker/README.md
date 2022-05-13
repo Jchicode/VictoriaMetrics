@@ -39,7 +39,7 @@ All notifications are blackholed according to `alertmanager.yml` config.
 
 ## Grafana
 
-To access service open following [link](http://localhost:3000).
+To access service open following [link]().
 
 Default credential:
 
