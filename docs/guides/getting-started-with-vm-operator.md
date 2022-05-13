@@ -218,7 +218,7 @@ Forwarding from 127.0.0.1:8429 -> 8429
 Forwarding from [::1]:8429 -> 8429
 ```
 
-To check that `VMAgent` collects metrics from the k8s cluster open in the browser [http://127.0.0.1:8429/targets](http://127.0.0.1:8429/targets) .
+To check that `VMAgent` collects metrics from the k8s cluster open in the browser []() .
 You will see something like this:
 
 <p align="center">
