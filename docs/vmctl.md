@@ -649,7 +649,7 @@ ROOT_IMAGE=scratch make package-vmctl
 
 ### ARM build
 
-ARM build may run on Raspberry Pi or on [energy-efficient ARM servers](https://blog.cloudflare.com/arm-takes-wing/).
+ARM build may run on Raspberry Pi or on [energy-efficient ARM servers]().
 
 #### Development ARM build
 

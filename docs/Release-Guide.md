@@ -37,7 +37,7 @@ sort: 18
 * Publish message in Slack  at <https://victoriametrics.slack.com>
 * Post at Twitter at <https://twitter.com/MetricsVictoria>
 * Post in Reddit at <https://www.reddit.com/r/VictoriaMetrics/>
-* Post in Linkedin at <https://www.linkedin.com/company/victoriametrics/>
+* Post in Linkedin at <>
 * Publish message in Telegram at <https://t.me/VictoriaMetrics_en> and <https://t.me/VictoriaMetrics_ru1>
 * Publish message in google groups at <https://groups.google.com/forum/#!forum/victorametrics-users>
 
