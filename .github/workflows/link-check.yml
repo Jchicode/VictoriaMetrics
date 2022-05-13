@@ -31,4 +31,4 @@ jobs:
           pip3 install setuptools wheel twine tox mechanical-markdown
       - name: Check Markdown Files
         run: |
-          for name in `find . -name "*.md"`; do echo -e "------\n$name" ; mm.py -l $name
+          for name in `find . -name "*.md"`; do echo -e "------\n$name" ; mm.py -l $name || exit 1 ;done
