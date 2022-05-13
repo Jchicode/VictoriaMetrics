@@ -38,7 +38,7 @@ vmbackup -storageDataPath=</path/to/victoria-metrics-data> -snapshot.createURL=h
 
 * `</path/to/victoria-metrics-data>` - path to VictoriaMetrics data pointed by `-storageDataPath` command-line flag in single-node VictoriaMetrics or in cluster `vmstorage`.
   There is no need to stop VictoriaMetrics for creating backups since they are performed from immutable [instant snapshots](https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#how-to-work-with-snapshots).
-* `http://victoriametrics:8428/snapshot/create` is the url for creating snapshots according to [these docs](https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#how-to-work-with-snapshots). `vmbackup` creates a snapshot by querying the provided `-snapshot.createURL`, then performs the backup and then automatically removes the created snapshot.
+* `` is the url for creating snapshots according to [these docs](https://docs.victoriametrics.com/Single-server-VictoriaMetrics.html#how-to-work-with-snapshots). `vmbackup` creates a snapshot by querying the provided `-snapshot.createURL`, then performs the backup and then automatically removes the created snapshot.
 * `<bucket>` is an already existing name for [GCS bucket](https://cloud.google.com/storage/docs/creating-buckets).
 * `<path/to/new/backup>` is the destination path where new backup will be placed.
 
@@ -242,7 +242,7 @@ See [this article](https://medium.com/@valyala/speeding-up-backups-for-big-time-
   -s3ForcePathStyle
      Prefixing endpoint with bucket name when set false, true by default. (default true)
   -snapshot.createURL string
-     VictoriaMetrics create snapshot url. When this is given a snapshot will automatically be created during backup. Example: http://victoriametrics:8428/snapshot/create . There is no need in setting -snapshotName if -snapshot.createURL is set
+     VictoriaMetrics create snapshot url. When this is given a snapshot will automatically be created during backup. Example:  . There is no need in setting -snapshotName if -snapshot.createURL is set
   -snapshot.deleteURL string
      VictoriaMetrics delete snapshot url. Optional. Will be generated from -snapshot.createURL if not provided. All created snapshots will be automatically deleted. Example: http://victoriametrics:8428/snapshot/delete
   -snapshotName string

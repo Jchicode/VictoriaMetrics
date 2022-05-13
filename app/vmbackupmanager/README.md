@@ -9,7 +9,7 @@ The required flags for running the service are as follows:
 
 * -eula - should be true and means that you have the legal right to run a backup manager. That can either be a signed contract or an email with confirmation to run the service in a trial period
 * -storageDataPath - path to VictoriaMetrics or vmstorage data path to make backup from
-* -snapshot.createURL - VictoriaMetrics creates snapshot URL which will automatically be created during backup. Example: <http://victoriametrics:8428/snapshot/create>
+* -snapshot.createURL - VictoriaMetrics creates snapshot URL which will automatically be created during backup. Example: <>
 * -dst - backup destination at s3, gcs or local filesystem
 * -credsFilePath - path to file with GCS or S3 credentials. Credentials are loaded from default locations if not set. See [https://cloud.google.com/iam/docs/creating-managing-service-account-keys](https://cloud.google.com/iam/docs/creating-managing-service-account-keys) and [https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)
 
@@ -241,7 +241,7 @@ vmbackupmanager performs regular backups according to the provided configs.
   -s3ForcePathStyle
     	Prefixing endpoint with bucket name when set false, true by default. (default true)
   -snapshot.createURL string
-    	VictoriaMetrics create snapshot url. When this is given a snapshot will automatically be created during backup.Example: http://victoriametrics:8428/snapshot/create
+    	VictoriaMetrics create snapshot url. When this is given a snapshot will automatically be created during backup.Example: 
   -snapshot.deleteURL string
     	VictoriaMetrics delete snapshot url. Optional. Will be generated from snapshot.createURL if not provided. All created snaphosts will be automatically deleted.Example: http://victoriametrics:8428/snapshot/delete
   -storageDataPath string
